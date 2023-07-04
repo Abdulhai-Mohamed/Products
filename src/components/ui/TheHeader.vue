@@ -7,8 +7,7 @@
           <router-link to="/cart">Cart</router-link>
           <base-badge mode="elegant">{{ cart.qty }}</base-badge>
         </li>
-        <li><router-link to="/coaches"> Coaches</router-link></li>
-        <li>
+         <li>
           <div>
             <v-list>
               <v-list-group :value="false" prepend-icon="mdi-translate">

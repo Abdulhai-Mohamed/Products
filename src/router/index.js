@@ -2,8 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import AppLogin from "./../views/AppLogin.vue";
 import CreateProduct from "./../views/CreateProduct.vue";
-import AppTest from "./../views/AppTest.vue";
-import AppProducts from "./../views/AppProducts.vue";
+ import AppProducts from "./../views/AppProducts.vue";
 import productDetails from "./../views/productDetails.vue";
 import UserRegister from "./../views/UserRegister.vue";
 import NotFound from "./../views/NotFound";
@@ -15,8 +14,7 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: "/", redirect: "/products" },
-  { path: "/coaches", component: AppTest },
-  {
+   {
     path: "/products",
     component: AppProducts,
   },
