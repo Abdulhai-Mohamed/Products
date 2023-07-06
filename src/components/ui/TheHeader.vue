@@ -1,58 +1,65 @@
 <template>
   <div>
-    <nav>
-      <ul>
-        <li><router-link to="/products">products</router-link></li>
-        <li>
-          <router-link to="/cart">Cart</router-link>
-          <base-badge mode="elegant">{{ cart.qty }}</base-badge>
-        </li>
-         <li>
-          <div>
-            <v-list>
-              <v-list-group :value="false" prepend-icon="mdi-translate">
-                <template v-slot:activator>
-                  <v-list-item-title>Languages</v-list-item-title>
-                </template>
+    <nav class="mb-10 pa-6">
+      <div class="ul-parent">
+        <ul>
+          <li><router-link to="/products">Products</router-link></li>
+          <li>
+            <router-link to="/cart">Cart</router-link>
+            <base-badge mode="elegant">{{ cart.qty }}</base-badge>
+          </li>
+        </ul>
 
-                <v-list-item link @click="SaveLang('ar')">
-                  <v-list-item-title>Arabic</v-list-item-title>
+        <v-spacer></v-spacer>
 
-                  <v-list-item-icon>
-                    <v-icon>mdi-abjad-arabic</v-icon>
-                  </v-list-item-icon>
-                </v-list-item>
-                <v-list-item link @click="SaveLang('en')">
-                  <v-list-item-title>English</v-list-item-title>
+        <ul>
+          <li><router-link to="/auth" v-if="!isAuth"> Login</router-link></li>
 
-                  <v-list-item-icon>
-                    <v-icon>mdi-translate</v-icon>
-                  </v-list-item-icon>
-                </v-list-item>
-                <v-list-item link @click="SaveLang('de')">
-                  <v-list-item-title>German</v-list-item-title>
+          <li>
+            <div v-if="isAuth">
+              <b-button variant="danger" @click="logout">Logout</b-button>
+              <h5 class="logout-h6">
+                You will automatically logged out after :
+                <span class="text-danger" v-text="counter"> </span>
+                seconds
+              </h5>
+            </div>
+          </li>
+          <li>
+            <div>
+              <v-list>
+                <v-list-group :value="false" prepend-icon="mdi-translate">
+                  <template v-slot:activator>
+                    <v-list-item-title>Languages</v-list-item-title>
+                  </template>
 
-                  <v-list-item-icon>
-                    <v-icon>mdi-translate</v-icon>
-                  </v-list-item-icon>
-                </v-list-item>
-              </v-list-group>
-            </v-list>
-          </div>
-        </li>
-        <li><router-link to="/auth" v-if="!isAuth"> Login</router-link></li>
+                  <v-list-item link @click="SaveLang('ar')">
+                    <v-list-item-title>Arabic</v-list-item-title>
 
-        <li>
-          <div v-if="isAuth"  >
-            <b-button variant="danger" @click="logout">Logout</b-button>
-            <h6>
-              You will automatically logout after :
-              <span class="text-danger" v-text="counter"> </span>
-              seconds
-            </h6>
-          </div>
-        </li>
-      </ul>
+                    <v-list-item-icon>
+                      <v-icon>mdi-abjad-arabic</v-icon>
+                    </v-list-item-icon>
+                  </v-list-item>
+                  <v-list-item link @click="SaveLang('en')">
+                    <v-list-item-title>English</v-list-item-title>
+
+                    <v-list-item-icon>
+                      <v-icon>mdi-translate</v-icon>
+                    </v-list-item-icon>
+                  </v-list-item>
+                  <v-list-item link @click="SaveLang('de')">
+                    <v-list-item-title>German</v-list-item-title>
+
+                    <v-list-item-icon>
+                      <v-icon>mdi-translate</v-icon>
+                    </v-list-item-icon>
+                  </v-list-item>
+                </v-list-group>
+              </v-list>
+            </div>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </template>
@@ -122,10 +129,10 @@ export default {
 </script>
 <style scoped lang="scss">
 nav {
-  margin: 2rem 0;
-  background-color: #e8f6ef;
+  background-color: #009688;
 }
-.v-list-group {
+.ul-parent {
+  display: flex;
 }
 ul {
   display: flex;
@@ -135,6 +142,16 @@ ul {
   & li {
     font-size: 1.5rem;
     margin: 0 1rem;
+    & a {
+      color: white;
+      text-decoration: none;
+      list-style: none;
+      font-weight: bold;
+    }
   }
+}
+.logout-h6 {
+  color: white;
+  margin: 1rem 0;
 }
 </style>
