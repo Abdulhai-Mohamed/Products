@@ -1,12 +1,13 @@
 <template>
   <div>
     <router-view />
+<div class="text-cener  ">
 
-    <h2>list products</h2>
-    <h4>
-      <router-link to="/create-product">Create New Product ?</router-link>
-    </h4>
-    <div class="table-parent">
+    <h4 class="newPro">
+    <router-link to="/create-product">{{$t("create-new-product")}}</router-link>
+  </h4>
+</div>
+    <div class="table-parent my-9 mx-auto">
       <vue-good-table :columns="columns" :rows="rows">
         <template slot="table-row" slot-scope="props">
           <div class="img-father" v-if="props.column.field == 'image'">
@@ -124,10 +125,16 @@ export default {
 };
 </script>
 <style scoped>
+.newPro a{
+  color: black;
+  text-decoration: none;
+}.newPro a:hover{
+  color: #007bff; /* Blue */
+  text-decoration: none;
+}
 .table-parent {
   width: 75%;
-  margin: 3rem auto;
-}
+ }
 .img-father {
   width: 75%;
 }

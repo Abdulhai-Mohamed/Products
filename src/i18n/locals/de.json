@@ -2,5 +2,6 @@
   "login": "Melde dich in deinem Konto an",
   "register": "Ein neues Konto erstellen",
   "createProduct": "Erstellen Sie ein neues Produkt",
-  "term": "Ich stimme den Allgemeinen Geschäftsbedingungen zu"
+  "term": "Ich stimme den Allgemeinen Geschäftsbedingungen zu",
+  "create-new-product": "Neues Produkt erstellen?"
 }

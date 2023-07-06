@@ -2,5 +2,6 @@
   "login": "login to your account",
   "register": "Create a new account",
   "createProduct": "Create a new product",
-  "term": "i agree terms and conditions"
+  "term": "i agree terms and conditions",
+  "create-new-product":"Create New Product ? "
 }
